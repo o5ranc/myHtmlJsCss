@@ -24,11 +24,6 @@ nav>ul {
   padding: 20px;
 }
 
-nav>ul>li>ul {
-  padding: 20px;
-  width: 100%
-}
-
 nav>ul>li {
   align-items: center;
   margin: 10px 0px;
@@ -49,7 +44,7 @@ nav>ul>li>.nav-titlemn:after {
   right: 0px;
 }
 
-nav>ul>li>.nav-titlemn.tabon:after {
+nav>ul>li>.nav-titlemn.m-on:after {
   content: '\F22C';
   font-family: bootstrap-icons !important;
   position: absolute;
@@ -58,11 +53,10 @@ nav>ul>li>.nav-titlemn.tabon:after {
 
 nav>ul>li>.btn-navmn {
   padding-left: 20px;
-  display: none;
 }
 
 nav>ul>li>.btn-navmn:before {
-  content: '\f015';
+  content: '- ';
   font-family: "Font Awesome 5 Free";
   font-weight: 600;
 }
