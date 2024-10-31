@@ -21,3 +21,21 @@
   color: #ffffff;
   cursor: pointer;
 }
+
+/* 공통 변수 선언 */
+:root {
+  /* 색상 변수 */
+  --my-dark-green: #007475;
+  --my-dark-gray: #69727D;
+  --my-dark-deep-gray: #212121;
+  --my-pastel-green: #EBF9ED;
+  --my-underline-green: #D4F0BC;
+  --my-pastel-blue: #E5EEFE;
+  --my-middle-gray: #E9E9E9;
+  --my-right-gray: #F9F9F9;
+  --my-dark-middle-gray: #F6F7F7;
+  --my-dark-bg-gray: #EAEDEE;
+
+
+  /* 폰트 변수 */
+}

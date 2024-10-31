@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>순수 html-js-css 연습</title>
+  <link rel="stylesheet" type="text/css" href="/css/common/reset.css">
+  <link rel="stylesheet" type="text/css" href="/css/common/base.css">
+  <link rel="stylesheet" type="text/css" href="/css/common/main.css">
+  <!-- 폰트 적용 때문에 추가 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+  <!-- bootstrap(1.10.0)에서 지원하는 아이콘 사용하려고 추가 -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+  <!-- font Awesome(5.8.2) 사용하는 경우 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="top-wrap">
+      <div class="top-logo">
+      </div>
+      <div class="top-right">
+        <span class="imguser">OOO님 로그인</span>
+        <span class="imgset"></span>
+        <script src="/js/common/includeHTML.js"></script>
+      </div>
+    </div>
+  </header>
+  <section>
+    <nav include-html="./navbar.html"></nav>
+    <main include-html="/contents/contents.html"></main>
+  </section>
+</body>
+
+<script type="module">
+  import { onLoadNavMenu } from '/js/main.js';
+
+  includeHTML();
+
+  window.onload = function () {
+    console.log('load 확인');
+    onLoadNavMenu();
+  };
+</script>
+
+</html>
