@@ -22,9 +22,18 @@
   cursor: pointer;
 }
 
+.btn-nobtn.c-green {
+  color: var(--my-dark-green);
+}
+
+.visible {
+  display: block;
+}
+
 /* 공통 변수 선언 */
 :root {
   /* 색상 변수 */
+  --my-primary-green: #016F70;
   --my-dark-green: #007475;
   --my-dark-gray: #69727D;
   --my-dark-deep-gray: #212121;
@@ -36,6 +45,8 @@
   --my-dark-middle-gray: #F6F7F7;
   --my-dark-bg-gray: #EAEDEE;
 
-
-  /* 폰트 변수 */
+  /* 버튼용 추가 컬러 변수 */
+  --btn-white-color: #ffffff;
+  --btn-green-color: var(--my-dark-green)
+    /* 폰트 변수 */
 }

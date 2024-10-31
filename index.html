@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="/css/common/reset.css">
   <link rel="stylesheet" type="text/css" href="/css/common/base.css">
   <link rel="stylesheet" type="text/css" href="/css/common/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/component/exam-tab.css">
   <!-- 폰트 적용 때문에 추가 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,12 +28,13 @@
       <div class="top-right">
         <span class="imguser">OOO님 로그인</span>
         <span class="imgset"></span>
-        <script src="/js/common/includeHTML.js"></script>
+        <script src="/js/common/include-html.js"></script>
       </div>
     </div>
   </header>
   <section>
-    <nav include-html="./navbar.html"></nav>
+    <nav include-html="/navbar.html"></nav>
+    <!-- 링크에 따른 화면 이동 필요 -->
     <main include-html="/contents/contents.html"></main>
   </section>
 </body>
@@ -43,7 +45,7 @@
   includeHTML();
 
   window.onload = function () {
-    console.log('load 확인');
+    console.log('window onload 함수!!');
     onLoadNavMenu();
   };
 </script>

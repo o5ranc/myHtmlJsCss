@@ -8,6 +8,7 @@ const includeHTML = () => {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     file = elmnt.getAttribute("include-html");
+
     if (file) {
       xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
