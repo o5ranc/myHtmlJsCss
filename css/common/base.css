@@ -34,17 +34,23 @@
 :root {
   /* 색상 변수 */
   --my-primary-green: #016F70;
+  --my-primary-right-green: #82B540;
+  --my-primary-yellow: #FFFFD3;
+  --my-dark-yellow: ##FFCC02;
   --my-dark-green: #007475;
   --my-dark-gray: #69727D;
   --my-dark-deep-gray: #212121;
-  --my-pastel-green: #EBF9ED;
+  --my-pastel-right-green: #EBF9ED;
+  --my-pastel-green: #D4EDDA;
   --my-underline-green: #D4F0BC;
   --my-pastel-blue: #E5EEFE;
+  --my-primary-blue: #BBD2EB;
   --my-middle-gray: #E9E9E9;
   --my-right-gray: #F9F9F9;
   --my-dark-middle-gray: #F6F7F7;
   --my-dark-bg-gray: #EAEDEE;
-
+  --my-alert-right-red: #F9D7DA;
+  --my-alert-red: #F5493D;
   /* 버튼용 추가 컬러 변수 */
   --btn-white-color: #ffffff;
   --btn-green-color: var(--my-dark-green)
