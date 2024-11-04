@@ -1,7 +1,7 @@
 <div>
   <span class="tab-title">탭메뉴 구성</span>
   <div class="tab-buttons">
-    <div class="tab-item t-on" click="onClickTab1">탭메뉴1</div>
+    <div class="tab-item t-on" @click="onClickTab1">탭메뉴1</div>
     <div class="tab-item">탭메뉴2</div>
   </div>
   <div class="tab-contents">
@@ -10,11 +10,11 @@
   </div>
 </div>
 
-<script type="module">
+<script>
   // import { onClickTab1 } from '/js/co mponent/exam-tab.js'
 
-  export const onClickTab1 = () => {
-    console.log("클릭이벤트1번!!!");
-  };
+  // export const onClickTab1 = () => {
+  //   console.log("클릭이벤트1번!!!");
+  // };
 
 </script>

@@ -1,4 +1,15 @@
 import { getRootBaseValue } from "/js/common/get-style.js";
+import Home from "/js/home.js";
+import Tab from "/js/components/exam-tab.js";
+
+const appComp = document.querySelector("#app");
+
+const appRoutses = {
+  "/": Home,
+  "/tabs": Tab
+}
+
+appComp.innerHTML = appRoutses["/"].template;
 
 export const onLoadNavMenu = () => {
   // var eTitleMenu = document.querySelector(".nav-titlemn");

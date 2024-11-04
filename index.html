@@ -35,19 +35,20 @@
   <section>
     <nav include-html="/navbar.html"></nav>
     <!-- 링크에 따른 화면 이동 필요 -->
-    <main include-html="/contents/contents.html"></main>
+    <main class=".app"></main>
+    <!-- <main include-html="/contents/contents.html"></main> -->
   </section>
+
+  <script type="module">
+    import { onLoadNavMenu } from '/js/main.js';
+  
+    includeHTML();
+  
+    window.onload = function () {
+      console.log('window onload 함수!!');
+      onLoadNavMenu();
+    };
+  
+  </script>
 </body>
-
-<script type="module">
-  import { onLoadNavMenu } from '/js/main.js';
-
-  includeHTML();
-
-  window.onload = function () {
-    console.log('window onload 함수!!');
-    onLoadNavMenu();
-  };
-</script>
-
 </html>
