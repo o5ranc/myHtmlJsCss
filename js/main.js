@@ -1,16 +1,20 @@
-import { getRootBaseValue } from "/js/common/get-style.js";
-import Home from "/js/home.js";
-import Tab from "/js/components/exam-tab.js";
+// import Home from "/js/home.js";
+// const appComp = document.querySelector("#app");
+// const appRoutses = {
+//   "/": Home,
+// }
+// appComp.innerHTML = appRoutses["/"].template;
 
-const appComp = document.querySelector("#app");
+includeHTML();
 
-const appRoutses = {
-  "/": Home,
-  "/tabs": Tab
-}
+/* 화면 로딩시 이벤트 */
+window.onload = function () {
+  console.log('window onload 함수!!');
+  onLoadNavMenu();
+  mappingContentArea();
+};
 
-appComp.innerHTML = appRoutses["/"].template;
-
+/** 메뉴 구성 */
 export const onLoadNavMenu = () => {
   // var eTitleMenu = document.querySelector(".nav-titlemn");
   // eTitleMenu.onclick = function () {
@@ -35,33 +39,14 @@ export const onLoadNavMenu = () => {
 
         // 방법2) 자식노드중 nodeName 으로 BUTTON 여부 확인 접근
         menuItem.childNodes.forEach((subMenus) => {
-          // console.log(
-          //   subMenus,
-          //   "nodeType : ",
-          //   subMenus.nodeType,
-          //   "nodeName : ",
-          //   subMenus.nodeName,
-          //   "nodeValue : ",
-          //   subMenus.nodeValue
-          // );
           if (subMenus.nodeName === "DIV") {
-            subMenus.classList.toggle("sm-on");
-            subMenus.style.backgroundColor =
-              subMenus.style.backgroundColor === ""
-                ? getRootBaseValue("--my-dark-gray")
-                : "";
-
-            console.log("하위 메뉴 확인1111 : ", subMenus.childNodes);
             // 서브 노드들에도 클릭 이벤트 등록시켜줌
             subMenus.childNodes.forEach((subMenu) => {
               if (subMenu.nodeName === "BUTTON") {
                 subMenu.addEventListener(
                   "click",
-                  (e) => {
-                    console.log("하위 메뉴 확인222 : ", e.target);
-                    // alert(e.target);
-                  },
-                  { capture: false }
+                  subMenuClick,
+                  { passive: false }
                 );
               }
             });
@@ -72,3 +57,34 @@ export const onLoadNavMenu = () => {
     );
   });
 };
+
+/** 이벤트 - 서브 메뉴 클릭 이벤트 */
+const subMenuClick = (e) => {
+  console.log("하위 메뉴 확인 : ", e.target);
+  // 서브 메뉴의 특정 속성값을 이용하여 페이지 이동
+  window.location.hash = e.target.getAttribute("page-href") || "home";
+}
+
+const mappingContentArea = () => {
+  const contentArea = document.getElementById("content-area");
+
+  // URL의 해시를 기준으로 페이지를 로드
+  async function loadPage() {
+    const hash = window.location.hash.substring(1) || "home";
+    const pageUrl = `pages/${hash}.html`;
+
+    try {
+      const response = await fetch(pageUrl);
+      if (!response.ok) throw new Error("Page not found");
+
+      const html = await response.text();
+      contentArea.innerHTML = html;
+    } catch (error) {
+      contentArea.innerHTML = "<h2>Page not found</h2>";
+    }
+  }
+
+  // 해시 변경 이벤트와 초기 로드를 설정
+  window.addEventListener("hashchange", loadPage);
+  loadPage();  // 초기 로드
+}

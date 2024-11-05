@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="/css/common/reset.css">
   <link rel="stylesheet" type="text/css" href="/css/common/base.css">
   <link rel="stylesheet" type="text/css" href="/css/common/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/component/exam-tab.css">
+  <link rel="stylesheet" type="text/css" href="/css/components/exam-tab.css">
   <!-- 폰트 적용 때문에 추가 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,20 +35,12 @@
   <section>
     <nav include-html="/navbar.html"></nav>
     <!-- 링크에 따른 화면 이동 필요 -->
-    <main class=".app"></main>
-    <!-- <main include-html="/contents/contents.html"></main> -->
+    <!-- <main class="app"></main> -->
+    <main id="content-area"></main>
   </section>
 
   <script type="module">
     import { onLoadNavMenu } from '/js/main.js';
-  
-    includeHTML();
-  
-    window.onload = function () {
-      console.log('window onload 함수!!');
-      onLoadNavMenu();
-    };
-  
   </script>
 </body>
 </html>
