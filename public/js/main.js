@@ -1,17 +1,9 @@
-// import Home from "/js/home.js";
-// const appComp = document.querySelector("#app");
-// const appRoutses = {
-//   "/": Home,
-// }
-// appComp.innerHTML = appRoutses["/"].template;
-
-includeHTML();
-
 /* 화면 로딩시 이벤트 */
 window.onload = function () {
   console.log('window onload 함수!!');
   onLoadNavMenu();
   mappingContentArea();
+  testTabClick();
 };
 
 /** 메뉴 구성 */
@@ -88,3 +80,8 @@ const mappingContentArea = () => {
   window.addEventListener("hashchange", loadPage);
   loadPage();  // 초기 로드
 }
+
+// const testTabClick = () => {
+//   const tabMenu = document.querySelectorAll(".tab-basic-wrap .tab-buttons .tab-item");
+//   console.log(">>>>>>> tabMenu : ", tabMenu);
+// }

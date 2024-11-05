@@ -20,12 +20,12 @@
 }
 
 .tab-basic-wrap .tab-buttons .tab-item:hover {
-  background-color: #000;
+  background-color: var(--my-dark-green);
   color: #ffffff;
 }
 
 .tab-basic-wrap .tab-buttons .tab-item.t-on {
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--my-dark-green);
 }
 
 .tab-basic-wrap .tab-contents .tab-item.t-on {

@@ -1,6 +1,6 @@
 // [참고] https://www.w3schools.com/howto/howto_html_include.asp
 const includeHTML = () => {
-  var z, i, elmnt, file, xhr;
+  var z, i, elmnt, file, xhr, jsfile;
   /*loop through a collection of all HTML elements:*/
   z = document.getElementsByTagName("*");
 
@@ -8,6 +8,7 @@ const includeHTML = () => {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     file = elmnt.getAttribute("include-html");
+    jsfile = elmnt.getAttribute("include-html");
 
     if (file) {
       xhr = new XMLHttpRequest();
@@ -15,6 +16,7 @@ const includeHTML = () => {
         if (this.readyState == 4) {
           if (this.status == 200) {
             elmnt.innerHTML = this.responseText;
+            loadScript(jsfile.replace('.html', '.js'))
           }
           if (this.status == 404) {
             elmnt.innerHTML = "Page not found.";
@@ -33,3 +35,11 @@ const includeHTML = () => {
   //   callback();
   // }, 0);
 };
+
+// javascript 파일 동적 로딩
+const loadScript = (src) => {
+  const script = document.createElement('script');
+  script.src = src;
+  script.type = 'module'; // Specify if your JS is a module
+  document.head.appendChild(script);
+}
